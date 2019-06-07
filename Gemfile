@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in capistrano-github.gemspec
-gemspec
+gem "capistrano", "~> 3.1"
+gem "octokit", ">= 4.0", "< 5.0"

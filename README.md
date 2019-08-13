@@ -18,17 +18,13 @@ Require github tasks and set `github_access_token`:
 ```ruby
 # Capfile
 require 'capistrano/github'
+
+install_plugin Capistrano::Github::Deployments
 ```
 
 ```ruby
 # deploy.rb
 set :github_access_token, '89c3be3d1f917b6ccf5e2c141dbc403f57bc140c'
-
-
-before 'deploy:starting', 'github:deployment:create'
-after  'deploy:starting', 'github:deployment:pending'
-after  'deploy:finished', 'github:deployment:success'
-after  'deploy:failed',   'github:deployment:failure'
 ```
 
 You can get your personal GH token [here](https://github.com/settings/applications)
